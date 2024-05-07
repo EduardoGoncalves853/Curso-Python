@@ -35,12 +35,33 @@ class Car:
 # Seleciona um carro aleatório para o print
 def RandomCar():
    Random = random.random()
-   if Random >= 0.5:
-    my_Car1 = Car('Toyota', 'Corolla','2020', "380000", "345000")
-    return my_Car1
+   if Random >= 0.96:
+        return Car('Toyota', 'Corolla', '2020', 'R$ 380.000,00', '345.000 km')
+   elif Random >= 0.88:
+        return Car('Honda', 'Civic', '2020', 'R$ 400.000,00', '320.000 km')
+   elif Random >= 0.80:
+        return Car('Ford', 'Focus', '2020', 'R$ 370.000,00', '350.000 km')
+   elif Random >= 0.72:
+        return Car('Chevrolet', 'Cruze', '2020', 'R$ 390.000,00', '330.000 km')
+   elif Random >= 0.64:
+        return Car('Nissan', 'Sentra', '2020', 'R$ 375.000,00', '340.000 km')
+   elif Random >= 0.56:
+        return Car('Volkswagen', 'Jetta', '2020', 'R$ 395.000,00', '325.000 km')
+   elif Random >= 0.45:
+        return Car('Hyundai', 'Elantra', '2020', 'R$ 385.000,00', '335.000 km')
+   elif Random >= 0.40:
+        return Car('Renault', 'Megane', '2020', 'R$ 365.000,00', '355.000 km')
+   elif Random >= 0.32:
+        return Car('Peugeot', '308', '2020', 'R$ 410.000,00', '315.000 km')
+   elif Random >= 0.24:
+        return Car('Kia', 'Cerato', '2020', 'R$ 400.000,00', '320.000 km')
+   elif Random >= 0.16:
+        return Car('Toyota', 'Corolla','2020', "380000", "345000")
+   elif Random >= 0.08:
+        return Car('Chevrolet', 'Celta', '2006', '20000', '15600')
    else:
-    my_Car2 = Car('Chevrolet', 'Celta', '2006', '20000', '15600')
-    return my_Car2
+    return Car('Toyota', 'Corolla', '2020', 'R$ 380.000,00', '345.000 km')
+    
 
 # Acelerando o carro
 RandomCar().acelerar()

@@ -32,7 +32,7 @@
 #  a => 11114 * 3 => 33.342d
 #* d = 277.786 dígitos
 
-valor_maximo = int(111112)
+valor_maximo = int(999998)
 razao = int(2)
 
 multiplos = [i for i in range(razao, valor_maximo + 1, razao)]

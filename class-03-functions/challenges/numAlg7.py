@@ -1,50 +1,38 @@
-
-# Algoritmo para calcular o
-# número de algarismos multiplos
-# de algum número
-
-#*  m = múltiplos
-#*  n = Valor inicial
-#*  d = dígitos
-
 # Fórmula
 #* n => td => d1
 #* a => a * x = ax
 #* d = d1 + ax
 
-# Uso dele
-# x = nd / m
-# >100 % 4
+import math
 
-#* 262 => 98 => 94
-#* 164 => 164 * 1.5 = 246
-#* 340 = 94 + 246
+n = 681
+m = 3
 
-# código time ↓
-import time
+def find_td(n, m):
+    td = 10 ** (round(math.log10(n)) - 1)
+    while td % m != 0:
+        td -= 1
+    return td
 
-# Meu código ↓
-start_time = time.time()
+d1 = find_td(n, m)
+
+def count_d1(m, d1):
+    multiplos = list(range(m, d1, m))  
+    multiplos_str = ''.join(str(m1) for m1 in multiplos)
+    return [len(multiplos_str), multiplos]
+
+algCheck = count_d1(m, d1)[0]
+
+a = n - (d1 - m)
+def count_Alg(n):
+    return len(str(n))
+
+print (f"(n - td = a) a = {a}")
+print (f"(td => d1) d1 = {d1}")
+print (f"BruteForce = {algCheck}")
+print (f"nd = {count_Alg(n)}")
 
 
-
-
-def countAlg():
-    valor_maximo = int(998)
-    razao = int(2)
-    multiplos = [i for i in range(razao, valor_maximo + 1, razao)]
-    multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
-    return [valor_maximo, multiplos_str, razao]
-algCheck = countAlg()
-
-print("--- %s seconds ---" % (time.time() - start_time))
-
-print(f"{algCheck[0]} tem {len(algCheck[1])} dígitos dentre os múltiplos de {algCheck[2]}")
-#! important
-def contar_digitos(numero):
-    numero_str = str(numero)
-    return len(numero_str)
-
-nn = 262
-quantidade_digitos = contar_digitos(nn)
-print(f"O número {nn} tem {quantidade_digitos} dígitos.")
+x = count_Alg(n) / m
+Form_D = count_d1(m, d1)[0] + (a * x)
+print(f"The number of digits in the number {n} to multiple {m} is {Form_D}")

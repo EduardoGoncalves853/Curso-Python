@@ -5,12 +5,12 @@
 
 import math
 
-n = 102
+n = 998
 m = 2
 
 # Digits in (td)
 def find_td(n, m):
-    td = 10 ** round(math.log10(n)) -1
+    td = 10 ** math.floor(math.log10(n))-1 
     while td % m != 0:
         td -= 1
     return td

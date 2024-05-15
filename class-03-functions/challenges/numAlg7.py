@@ -5,34 +5,59 @@
 
 import math
 
-n = 681
-m = 3
+n = 102
+m = 2
 
+# Digits in (td)
 def find_td(n, m):
-    td = 10 ** (round(math.log10(n)) - 1)
+    td = 10 ** round(math.log10(n)) -1
     while td % m != 0:
         td -= 1
     return td
 
 d1 = find_td(n, m)
 
-def count_d1(m, d1):
-    multiplos = list(range(m, d1, m))  
-    multiplos_str = ''.join(str(m1) for m1 in multiplos)
-    return [len(multiplos_str), multiplos]
+# Adquirimos o (a)
+a = n - d1
 
-algCheck = count_d1(m, d1)[0]
+# Olha se (d1) é divisor de (m) ↓
+if d1 % m != 0:
+  print("the number (n) have to be multiple of (m)")
+  exit()
 
-a = n - (d1 - m)
+def alg2dig(d1,m):
+
+    if m <=9 and m >= 5:
+        return d1/m + ((d1/m) - 1)
+    elif m == 4:
+        return d1/m + ((d1/m) - 2)
+    elif m == 3:
+        return d1/m + ((d1/m) - 3)
+    elif m == 2:
+        return d1/m + ((d1/m) - 4)
+    elif m == 1:
+        return d1/m + ((d1/m) - 9)
+    
+    else:
+        print("Only type numbers between 1 and 9 !!")
+        exit()
+
+# 2 dígitos
+dig2 = alg2dig(d1,m)
+
+# Para (nd) ↓
 def count_Alg(n):
     return len(str(n))
 
-print (f"(n - td = a) a = {a}")
-print (f"(td => d1) d1 = {d1}")
-print (f"BruteForce = {algCheck}")
-print (f"nd = {count_Alg(n)}")
-
-
 x = count_Alg(n) / m
-Form_D = count_d1(m, d1)[0] + (a * x)
-print(f"The number of digits in the number {n} to multiple {m} is {Form_D}")
+ax = a * x
+
+# E por fim adquirimos (d) ↓
+d = math.ceil(ax + dig2)
+
+# Formula ↓
+print(f'''
+    {n} => {d1} => {dig2}
+    {a} * {x} = {ax}
+    {d} = {ax} + {dig2}
+''')

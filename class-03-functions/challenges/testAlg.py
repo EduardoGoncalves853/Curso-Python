@@ -1,29 +1,18 @@
-# código para nd Igual a 2
 
-import math
+# código time ↓
+import time
 
-n = 27
-m = 9
+# Meu código ↓
+start_time = time.time()
 
-if n % m != 0:
-  print("the number (n) have to be multiple of (m)")
-  exit()
+def countAlg():
+    valor_maximo = int(99998)
+    razao = int(2)
+    multiplos = [i for i in range(razao, valor_maximo + 1, razao)]
+    multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
+    return [valor_maximo, multiplos_str, razao]
+algCheck = countAlg()
+# 31, 62, 93, 124
+print("--- %s seconds ---" % (time.time() - start_time))
 
-def alg2dig(n,m):
-
-    if m <=9 and m >= 5:
-        return n/m + ((n/m) - 1)
-    elif m == 4:
-        return n/m + ((n/m) - 2)
-    elif m == 3:
-        return n/m + ((n/m) - 3)
-    elif m == 2:
-        return n/m + ((n/m) - 4)
-    elif m == 1:
-        return n/m + ((n/m) - 9)
-    
-    else:
-        print("Only type numbers between 1 and 9 !!")
-        exit()
-
-print(f"The number of digits in the number {n} to multiple {m} is {alg2dig(n,m)}")
+print(f"{algCheck[0]} tem {len(algCheck[1])} dígitos dentre os múltiplos de {algCheck[2]}")

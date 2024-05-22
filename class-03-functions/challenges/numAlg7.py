@@ -5,7 +5,7 @@
 
 import math
 
-n = 998
+n = 7
 m = 2
 
 # Digits in (td)
@@ -26,8 +26,9 @@ if d1 % m != 0:
   exit()
 
 def alg2dig(d1,m):
-
-    if m <=9 and m >= 5:
+    if d1 == 0:
+        return d1 + (d1 * -1)
+    elif m <=9 and m >= 5:
         return d1/m + ((d1/m) - 1)
     elif m == 4:
         return d1/m + ((d1/m) - 2)

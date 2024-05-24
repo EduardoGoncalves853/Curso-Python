@@ -71,5 +71,6 @@ RandomCar().frear()
 RandomCar().esbagacando()
 
 # ↓ Informações de venda e mecânica do carro 
-print(RandomCar().info())
+ramCar = RandomCar().info()
 print(RandomCar().sale())
+eduardo gonçalves sobrinho

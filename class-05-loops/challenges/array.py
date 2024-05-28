@@ -1,17 +1,19 @@
-
-
 # Faça um programa
-# que leia  5 valores númericos
+# que leia 5 valores numéricos
 valores = []
-for i in range(1,6):
-    valores.append(int(input(f"Digite o {i}º valor: ")))
+
+for i in range(1, 6):
+    valor = int(input(f"Digite seu {i}º valor: "))
+    valores.append(valor)
 
 # e guarde-os em uma lista
+
 # No final mostre qual foi o menor e a maior
 # valor digitado e as suas respectivas posições na lista
+menor = min(valores)
+maior = max(valores)
 
-menor_valor = min(valores)
-maior_valor = max(valores)
+print(f"O menor valor da lista é {menor} e sua posição é {valores.index(menor)}")
+print(f"O maior valor da lista é {maior} e sua posição é {valores.index(maior)}")
 
-print(f"O maior valor: {maior_valor} e seu índex {valores.index(maior_valor)}")
-print(f"O menor valor: {menor_valor} e seu índex {valores.index(menor_valor)}")
+    

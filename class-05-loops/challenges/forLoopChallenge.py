@@ -1,3 +1,4 @@
+
 # Nível Iniciante:
 # Contagem regressiva: Crie um programa que conte de 10 até 1 e, em seguida, exiba “Fogo!”.
 
@@ -14,53 +15,66 @@ print("Fogo!")
 # Nível Intermediário:
 # Soma dos primeiros N números: Peça ao usuário um número inteiro positivo N e calcule a soma dos prim
 
+#* Primeira forma
 n = 10
 soma = 0
 for i in range(1, n + 1):
     soma += i
 print(soma)
 
+#* Segunda Forma
+n = 10
+soma = 0
+
+while n > 0:
+    soma += n
+    n -= 1
+print(soma)
+
 # Nível Difícil:
 # Fatorial: Peça ao usuário um número inteiro não negativo n e calcule o fatorial desse número.
 
-#* Minha forma
-i = int(input("Digite um número inteiro não negativo n para calcularmos seu fatorial"))
-vezes = 1
+#* Primeira forma
+from functools import reduce
 
-for i in range(1, i + 1):
-    vezes *= i
-print(vezes)
+n = list([5])
+count = 1
 
-# Nível Avançado:
-# Tabuada: Peça ao usuário um número inteiro e exiba a tabuada desse número de 1 a 10.
+for i in n:
+    while count < n[0]:
+        i -= 1
+        n.append(i)
+        count += 1
 
-#* Minha forma
-times = 3
-for i in range(0, 10):
-    times * i
-    i+=1
-    timesX = times * i
-    print(f"{times} * {i} = {timesX}")
+result = reduce(lambda x,y: x * y, n)
+print(result)
 
-# Nível Professor:
-# Triângulo de Pascal: Crie um programa que gere as primeiras N linhas do Triângulo de Pascal.
-#2
-#4
-#8
-#16
-#32
+#* Segunda Forma
+n = 5
+count = n
 
-#Array
+while count > 1:
+    count -= 1
+    n *= count
+    print(n)
 
-#input
-input = 5
-times = 0
+# # Nível Avançado:
+# # Tabuada: Peça ao usuário um número inteiro e exiba a tabuada desse número de 1 a 10.
 
-while times != input:
-    times += 1
-    print(times)
-print(times)
+#* Primeira forma
+n = 8
+for i in range(1, 11):
+    ar = n * i
+    print(f'{n} * {i} = {ar}')
+    
+#* Segunda forma
+n = 8
+t = 10
 
+while t >= 1:
+    n1 = n * t
+    print(f'{n} * {t} = {n1}')
+    t -= 1
 
 
 

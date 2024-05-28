@@ -1,15 +1,27 @@
 
 # Nível Iniciante:
 # Contagem regressiva: Crie um programa que conte de 10 até 1 e, em seguida, exiba “Fogo!”.
+import time
 
 #* Primeira forma
-for i in reversed(range(1 , 11)):
+for i in range(10, 0, -1):
+    time.sleep(1)
     print(i)
+    
+time.sleep(1)
 print("Fogo!!")
 
 #* Segunda forma
-for i in range(10, 0, -1):
-    print(i)   
+i = 10
+print(i)
+
+#loop while
+while i > 1:
+    time.sleep(1)
+    i -= 1
+    print(i)
+
+time.sleep(1)
 print("Fogo!")
 
 # Nível Intermediário:

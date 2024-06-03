@@ -1,18 +1,15 @@
 
-# código time ↓
-import time
-
 # Meu código ↓
-start_time = time.time()
 
 def countAlg():
-    valor_maximo = int(99998)
+    valor_maximo = int(10)
     razao = int(2)
     multiplos = [i for i in range(razao, valor_maximo + 1, razao)]
     multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
     return [valor_maximo, multiplos_str, razao]
-algCheck = countAlg()
-# 31, 62, 93, 124
-print("--- %s seconds ---" % (time.time() - start_time))
 
-print(f"{algCheck[0]} tem {len(algCheck[1])} dígitos dentre os múltiplos de {algCheck[2]}")
+algCheck = countAlg()
+between = algCheck[0] / algCheck[2]
+multiplos_in_valor_maximo = len(algCheck[1])
+print(f"{algCheck[0]} have {multiplos_in_valor_maximo} digits among the multiples of {algCheck[2]}")
+print(f"[{algCheck[2]}...{between:.0f}...{multiplos_in_valor_maximo}]")

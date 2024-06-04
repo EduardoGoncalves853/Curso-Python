@@ -1,9 +1,8 @@
 
 # Meu código ↓
-
 def countAlg():
-    valor_maximo = int(10)
-    razao = int(2)
+    valor_maximo = int(1107)
+    razao = int(3)
     multiplos = [i for i in range(razao, valor_maximo + 1, razao)]
     multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
     return [valor_maximo, multiplos_str, razao]

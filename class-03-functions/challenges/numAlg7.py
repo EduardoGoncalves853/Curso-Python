@@ -8,24 +8,27 @@ import math
 n = 7
 m = 2
 
+# Olha se (d1) é divisor de (m) ↓
+if n % m != 0:
+  print("the number (n) have to be multiple of (m)")
+  exit()
+
+#* Para (td) e (a)
+
 # Digits in (td)
 def find_td(n, m):
     td = 10 ** math.floor(math.log10(n))-1 
     while td % m != 0:
         td -= 1
     return td
-
 d1 = find_td(n, m)
 
 # Adquirimos o (a)
 a = n - d1
 
-# Olha se (d1) é divisor de (m) ↓
-if d1 % m != 0:
-  print("the number (n) have to be multiple of (m)")
-  exit()
-
+# Quando o número for 2 dígitos
 def alg2dig(d1,m):
+
     if d1 == 0:
         return d1 + (d1 * -1)
     elif m <=9 and m >= 5:
@@ -40,25 +43,22 @@ def alg2dig(d1,m):
         return d1/m + ((d1/m) - 9)
     
     else:
-        print("Only type numbers between 1 and 9 !!")
-        exit()
-
-# 2 dígitos
-dig2 = alg2dig(d1,m)
-
+        return print("Only type numbers between 1 and 9 !!")
+    
+#* (nd) número de dígitos
 # Para (nd) ↓
 def count_Alg(n):
     return len(str(n))
 
-x = count_Alg(n) / m
-ax = a * x
+# Para ax ↓
+ax = math.floor(a * count_Alg(n) / m)
 
 # E por fim adquirimos (d) ↓
-d = math.ceil(ax + dig2)
+d = (ax + alg2dig(d1, m))
 
 # Formula ↓
 print(f'''
-    {n} => {d1} => {dig2}
-    {a} * {x} = {ax}
-    {d} = {ax} + {dig2}
+    {n} => {d1} => {alg2dig(d1, m)}
+    {a} * {ax} = {ax}
+    {d} = {ax} + {alg2dig(d1, m)}
 ''')

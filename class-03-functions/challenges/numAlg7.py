@@ -5,15 +5,14 @@
 
 import math
 
-n = 7
-m = 2
+n = 11096
+m = 4
+array = []
 
 # Olha se (d1) é divisor de (m) ↓
 if n % m != 0:
   print("the number (n) have to be multiple of (m)")
   exit()
-
-#* Para (td) e (a)
 
 # Digits in (td)
 def find_td(n, m):
@@ -22,43 +21,44 @@ def find_td(n, m):
         td -= 1
     return td
 d1 = find_td(n, m)
+# atribui td ao array
+array.append(d1)
 
-# Adquirimos o (a)
-a = n - d1
+find_td(array[0], m)
 
-# Quando o número for 2 dígitos
-def alg2dig(d1,m):
+# Conta os dígitos de td 
+def countDigitsTd(d1, m):
+    valor_maximo = d1 - (d1 % m)
+    multiplos = [i for i in range(m, valor_maximo + 1, m)]
+    multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
+    return [valor_maximo, multiplos_str]
+tdDigits = len(countDigitsTd(d1, m)[1])
 
-    if d1 == 0:
-        return d1 + (d1 * -1)
-    elif m <=9 and m >= 5:
-        return d1/m + ((d1/m) - 1)
-    elif m == 4:
-        return d1/m + ((d1/m) - 2)
-    elif m == 3:
-        return d1/m + ((d1/m) - 3)
-    elif m == 2:
-        return d1/m + ((d1/m) - 4)
-    elif m == 1:
-        return d1/m + ((d1/m) - 9)
-    
-    else:
-        return print("Only type numbers between 1 and 9 !!")
-    
 #* (nd) número de dígitos
 # Para (nd) ↓
 def count_Alg(n):
     return len(str(n))
 
+for i in array:
+    dig = len(array[0])
+    while dig != 2:
+        array.append(find_td(array[i]))
+        dig -= 1
+
+# Adquirimos o (a)
+a = n - d1
+
+
 # Para ax ↓
 ax = math.floor(a * count_Alg(n) / m)
 
 # E por fim adquirimos (d) ↓
-d = (ax + alg2dig(d1, m))
+d = (ax + tdDigits)
 
+print(array)
 # Formula ↓
 print(f'''
-    {n} => {d1} => {alg2dig(d1, m)}
-    {a} * {ax} = {ax}
-    {d} = {ax} + {alg2dig(d1, m)}
+    {n} => {d1} => {tdDigits}
+    {a} * {count_Alg(n)}/{m} = {ax}
+    {d} = {ax} + {tdDigits}
 ''')

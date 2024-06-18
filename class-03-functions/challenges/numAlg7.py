@@ -5,8 +5,8 @@
 
 import math
 
-n = 11096
-m = 4
+n = 1100
+m = 2
 array = []
 
 # Olha se (d1) é divisor de (m) ↓
@@ -21,10 +21,6 @@ def find_td(n, m):
         td -= 1
     return td
 d1 = find_td(n, m)
-# atribui td ao array
-array.append(d1)
-
-find_td(array[0], m)
 
 # Conta os dígitos de td 
 def countDigitsTd(d1, m):
@@ -40,7 +36,7 @@ def count_Alg(n):
     return len(str(n))
 
 for i in array:
-    dig = len(array[0])
+    dig = count_Alg(array[0])
     while dig != 2:
         array.append(find_td(array[i]))
         dig -= 1
@@ -48,14 +44,12 @@ for i in array:
 # Adquirimos o (a)
 a = n - d1
 
-
 # Para ax ↓
 ax = math.floor(a * count_Alg(n) / m)
 
 # E por fim adquirimos (d) ↓
 d = (ax + tdDigits)
 
-print(array)
 # Formula ↓
 print(f'''
     {n} => {d1} => {tdDigits}

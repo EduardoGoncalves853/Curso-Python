@@ -1,7 +1,7 @@
 import math
 
-n = 11096
-m = 4
+n = 200000000
+m = 2
 array = []
 
 # Olha se (d1) é divisor de (m) ↓
@@ -24,9 +24,8 @@ find_td(array[0], m)
 
 for i in range(len(array)):
     dig = len(str(array[0]))
+    
     while dig != 2:
-        array.append(find_td(array[i], m))
+        array.append(find_td(array[-1], m))
         dig -= 1
-    array[-1]
-
 print(array)

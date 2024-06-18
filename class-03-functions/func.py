@@ -42,3 +42,5 @@ def calc_avg(grade1, grade2):
   return avg
 
 print(calc_avg(5.5, 8))
+
+#______________________________

@@ -1,6 +1,6 @@
 def countAlg():
-    vm = int(11111086)
-    razao = int(7)
+    vm = int(1896)
+    razao = int(2)
     valor_maximo = vm - (vm % razao)
     multiplos = [i for i in range(razao, valor_maximo + 1, razao)]
     multiplos_str = ''.join(str(multiplo) for multiplo in multiplos)
@@ -26,13 +26,31 @@ print(f'''
  and {v1} , {v2} and {v3}
 ''')
 
-# _________________
-# 2 => 106
-# 3 => 1107
-# 4 => 11096
-# 5 => 111085
-# 6 => 1111086
-# 7 => 11111086
-# 8 => 111111056
-# 9 => 1111111101
+# _______________________
+#        2 have 106
+#        3 have 1107
+#        4 have 11096
+#        5 have 111085
+#        6 have 1111086
+#        7 have 11111086
+#        8 have 111111056
+#        9 have 1111111101
+
+# _______________________
+#       98 have 94
+#      998 have 1444
+#     9998 have 19444
+#    99998 have 244444
+#   999998 have 2944444
+#  9999998 have 34444444
+# 99999998 have 394444444
+
+# 1456
+# 458
+
+# 3 + 1/4
+# 1 + 1/56 + 1/224
+
+
+
 

@@ -1,5 +1,4 @@
 import math
-from functools import reduce
 
 n = 9998
 m = 2
@@ -20,16 +19,6 @@ def find_td(n, m):
 
     return array
 
-array = find_td(n,m)
-
-
-def alg_calc(array):
-    al = []
-    for i in array:
-       al.append((i - 10 ** (len(str(i))) - 1) len(str(i)))
-
-    return al
-
-
+# [9998, 998, 98, 8]
 print(find_td(n, m))
-print(alg_calc(array))
+

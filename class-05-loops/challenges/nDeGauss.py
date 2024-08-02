@@ -1,22 +1,18 @@
-from functools import reduce
-n = 30
 
-def Gauss(n):
-    sum = 0
+# An precisa ser ínpar
+#gauss
+# Sn = ((A1 + An)N)/2
+# 1 + 3 + 5 + 7 + 9
 
-    while n > 0:
-        sum += n
-        n -= 1
-    return sum
-print(Gauss(n))
+An = 7
+A1 = 1
+N = (An + 1)/2
 
-#* Processo array
+def Gauss(An,A1):
+  return ((A1 + An)*N)/2
 
-array = []
+print(Gauss(An,A1))
 
-for i in range(1, n + 1):
-    array.append(Gauss(i))
 
-print(array)
 
 

@@ -1,6 +1,6 @@
 import math
 
-n = 200000000
+n = 106
 m = 2
 array = []
 
@@ -18,7 +18,9 @@ def find_td(n, m):
 d1 = find_td(n, m)
 
 # atribui td ao array
+dif = n - d1
 array.append(d1)
+array.append(dif)
 
 find_td(array[0], m)
 
@@ -29,3 +31,4 @@ for i in range(len(array)):
         array.append(find_td(array[-1], m))
         dig -= 1
 print(array)
+print(sum(array))
